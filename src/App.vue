@@ -16,8 +16,12 @@ export default {
     handleClick() {
         console.log(this.$refs.name)
       }
-    }
+  },
+  mounted() {
+    const elements = document.querySelectorAll('[fdprocessedid]');
+    elements.forEach(el => el.removeAttribute('fdprocessedid'));
   }
+}
 
 </script>
 
