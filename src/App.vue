@@ -11,7 +11,15 @@
       <p>Claim your SmartPhone!</p>
     </Modal>
   </div>
+
+  <div v-if="showModalTwo">
+    <Modal @close="toggleModalTwo">
+      <h1>Sign up to the newsletter</h1>
+      <p>For updates  and promo codes</p>
+    </Modal>
+  </div>
   <button @click.alt="toggleModal">Open modal (pressed key: alt)</button>
+  <button @click="toggleModalTwo">Open modal</button>
 </template>
 
 <script>
@@ -23,14 +31,16 @@ export default {
   data() {
     return {
       title: 'My First Vue App',
-      header: 'Sign up for Giveaway!',
-      text: 'Claim your Smartphone',
-      showModal: false
+      showModal: false,
+      showModalTwo: false,
       }
   },
   methods: {
     toggleModal() {
       this.showModal = !this.showModal
+    },
+    toggleModalTwo() {
+      this.showModalTwo = !this.showModalTwo
     }
   },
   mounted() {
